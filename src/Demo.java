@@ -10,6 +10,9 @@ public class Demo {
         Dog dog1 = new Dog("Dog The Bounty Hunter",69,"Bounty Hunter");
 
         Employee john = new Employee(1,"John","Billy","j_j@j.com");
+        Adopter jordan = new Adopter("Jordan","Kelloway",25,"Male");
+
+
         john.addAnimalToEmployeeCare(cat1);
         AnimalShelter shelter = new AnimalShelter();
         shelter.addToEmployees(john);
@@ -24,6 +27,12 @@ public class Demo {
         shelter.printAnimalsInShelter();
 
         shelter.printEmployeeInShelter();
+
+        shelter.adoptAnimal(jordan,cat1);
+
+        shelter.printAnimalsInShelter();
+
+        jordan.printAnimals();
 
 
 

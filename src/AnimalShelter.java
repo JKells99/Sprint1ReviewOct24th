@@ -6,10 +6,21 @@ public class AnimalShelter {
 
     private ArrayList<Employee> employees = new ArrayList<>();
 
+    private ArrayList<Adopter> adopters = new ArrayList<>();
+
+
 
     private int numberOfDogs = 0;
 
     public AnimalShelter() {
+    }
+
+    public ArrayList<Adopter> getAdopters() {
+        return adopters;
+    }
+
+    public void setAdopters(ArrayList<Adopter> adopters) {
+        this.adopters = adopters;
     }
 
     public ArrayList<Employee> getEmployees() {
@@ -37,6 +48,11 @@ public class AnimalShelter {
     }
 
     // Methods
+
+    public void addToAdopters(Adopter adopter) {
+        adopters.add(adopter);
+    }
+
     public void addToAnimals(Animal animal) {
         animals.add(animal);
     }
@@ -67,6 +83,13 @@ public class AnimalShelter {
         for(Employee employee : employees){
             System.out.println(employee.getFirstName() + " " + employee.getLastName());
         }
+    }
+
+    public void adoptAnimal(Adopter adopter,Animal animal){
+        adopter.addAnimalToOwnedList(animal);
+        animals.remove(animal);
+        System.out.println("Animal Adopted! Woo " + animal.getName());
+
     }
 
 
