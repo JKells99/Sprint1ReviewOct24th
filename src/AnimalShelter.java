@@ -4,9 +4,20 @@ public class AnimalShelter {
 
     private ArrayList<Animal> animals = new ArrayList<>();
 
+    private ArrayList<Employee> employees = new ArrayList<>();
+
+
     private int numberOfDogs = 0;
 
     public AnimalShelter() {
+    }
+
+    public ArrayList<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(ArrayList<Employee> employees) {
+        this.employees = employees;
     }
 
     public ArrayList<Animal> getAnimals() {
@@ -30,6 +41,10 @@ public class AnimalShelter {
         animals.add(animal);
     }
 
+    public void  addToEmployees(Employee employee) {
+        employees.add(employee);
+    }
+
     public void printAnimalsInShelter(){
         for(Animal animal : animals){
             if(animal instanceof Cat){
@@ -44,6 +59,13 @@ public class AnimalShelter {
                 System.out.println();
             }
 
+        }
+    }
+
+    public void printEmployeeInShelter(){
+        System.out.println("List Of Shelter Employees");
+        for(Employee employee : employees){
+            System.out.println(employee.getFirstName() + " " + employee.getLastName());
         }
     }
 
